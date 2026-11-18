@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="BROODWATCH video poster">
+<defs><radialGradient id="bg" cx="50%" cy="43%" r="72%"><stop stop-color="#102c40"/><stop offset=".58" stop-color="#07111e"/><stop offset="1" stop-color="#01050b"/></radialGradient><linearGradient id="arc" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#60b6c1" stop-opacity=".15"/><stop offset=".53" stop-color="#c2394a" stop-opacity=".68"/><stop offset="1" stop-color="#7adac9" stop-opacity=".12"/></linearGradient></defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<g stroke="#1f4a5d" opacity=".34" fill="none"><circle cx="540" cy="465" r="310"/><circle cx="540" cy="465" r="258"/><circle cx="540" cy="465" r="206"/><ellipse cx="540" cy="465" rx="310" ry="110"/><ellipse cx="540" cy="465" rx="165" ry="310"/><path d="M210 465H870M540 145V785"/></g>
+<g fill="none" stroke="url(#arc)" stroke-width="2"><path d="M248 397Q540 80 833 444"/><path d="M278 600Q530 300 814 363"/><path d="M375 755Q560 470 770 285"/></g>
+<g fill="#e95162"><circle cx="248" cy="397" r="6"/><circle cx="833" cy="444" r="7"/><circle cx="278" cy="600" r="5"/><circle cx="814" cy="363" r="6"/><circle cx="375" cy="755" r="6"/><circle cx="770" cy="285" r="5"/></g>
+<rect x="389" y="413" width="302" height="104" rx="4" fill="#020a14" opacity=".84"/>
+<text x="540" y="468" text-anchor="middle" font-size="52" font-family="Arial,sans-serif" font-weight="700" letter-spacing="6" fill="#f0f6fa">BROOD<tspan fill="#ff4f64">WATCH</tspan></text>
+<text x="540" y="497" text-anchor="middle" font-size="13" font-family="Arial,sans-serif" letter-spacing="4" fill="#b0c4cf">EMERGING FINANCIAL THREAT INTELLIGENCE</text>
+<g transform="translate(540 656)" fill="none" stroke="#7be1da" stroke-width="3"><circle r="42" fill="#08212b" fill-opacity=".92"/><path d="M-9 -17L20 0L-9 17Z" fill="#9df0e8" stroke="none"/></g>
+<text x="540" y="750" text-anchor="middle" font-size="22" font-family="Arial,sans-serif" fill="#c6e0e8" letter-spacing="2">WATCH THE 42-SECOND OVERVIEW</text>
+</svg>
