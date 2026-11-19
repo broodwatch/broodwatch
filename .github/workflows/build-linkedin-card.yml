@@ -1,0 +1,39 @@
+name: Build BROODWATCH LinkedIn preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-linkedin-card.yml
+      - scripts/generate_linkedin_card.py
+      - broodwatch-logo-full.webp
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image tooling
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Generate professional preview image
+        run: python scripts/generate_linkedin_card.py
+      - name: Commit generated JPG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add broodwatch-linkedin-official.jpg
+          if git diff --cached --quiet; then
+            echo "Social preview is already current."
+          else
+            git commit -m "Generate official BROODWATCH LinkedIn preview JPG"
+            git push origin HEAD:main
+          fi
