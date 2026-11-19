@@ -110,6 +110,82 @@
     @media (max-width:1180px){.nav{grid-template-columns:1fr;justify-items:start}.navlinks{justify-content:flex-start}.login-shell{align-items:flex-start}.login-note{text-align:left}}
     @media (max-width:1080px){.hero-grid,.signal-grid,.about,.contact-grid{grid-template-columns:1fr}.hero-visual{order:-1;min-height:480px}.panel-grid,.domains{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:1fr 1fr}}
     @media (max-width:760px){.nav{padding:12px 0}.navlinks{gap:12px}.hero{padding-top:34px}.highlights,.panel-grid,.domains,.workflow,.form-row{grid-template-columns:1fr}.hero-visual{min-height:390px}.globe,.orbit{width:min(100%,380px)}.beam{height:270px;top:26px}.signal h2,.section-head h2{font-size:32px}.signal .quote{font-size:28px}.subbrand{letter-spacing:.24em}.brand-logo{width:78px}.brand-wordmark{font-size:20px}.login-form{flex-wrap:wrap}.login-form input{width:100%}.login-form button{width:100%}}
+
+    /* iPhone / narrow-screen presentation only. Desktop layout remains unchanged. */
+    @media (max-width:760px){
+      html{scroll-padding-top:12px}
+      body{overflow-x:hidden}
+      .wrap{padding-left:18px;padding-right:18px}
+      .topbar{position:relative;backdrop-filter:none;background:rgba(3,7,12,.96)}
+      .nav{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-height:0;padding:12px 0 14px}
+      .brand{gap:10px;width:100%;min-width:0}
+      .brand-logo{width:62px;max-height:46px;object-fit:contain;flex:none}
+      .brand-wordmark{font-size:clamp(13px,4.2vw,18px);letter-spacing:.09em;white-space:nowrap}
+      .navlinks{display:flex;justify-content:flex-start;flex-wrap:nowrap;gap:8px;min-width:0;width:100%;
+        overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+        padding:2px 0 6px;scrollbar-width:none}
+      .navlinks::-webkit-scrollbar{display:none}
+      .navlinks a{display:inline-flex;align-items:center;flex:0 0 auto;white-space:nowrap;
+        min-height:35px;padding:8px 11px;border:1px solid rgba(103,139,167,.25);
+        background:rgba(9,23,35,.72);border-radius:999px;font-size:11px;letter-spacing:.06em}
+      .login-shell{align-items:stretch;gap:5px;min-width:0;width:100%}
+      .login-caption{font-size:10px;letter-spacing:.14em}
+      .login-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;
+        align-items:center;gap:7px;width:100%;min-width:0}
+      .login-form input{min-width:0;width:100%;height:42px;padding:10px 12px;font-size:16px}
+      .login-form button{width:auto;min-width:72px;height:42px;padding:10px 12px;white-space:nowrap}
+      .hero{padding-top:28px;padding-bottom:28px}
+      .hero-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+      .hero-grid>div{min-width:0}
+      .eyebrow{font-size:10px;letter-spacing:.15em;margin-bottom:15px}
+      .hero-wordmark{font-size:clamp(22px,7.6vw,34px);letter-spacing:.035em;white-space:nowrap;line-height:1.18}
+      .subbrand{font-size:clamp(10px,3vw,13px);letter-spacing:.16em;line-height:1.5;margin-bottom:18px}
+      .lede{font-size:clamp(19px,5.1vw,23px);line-height:1.42}
+      .summary{font-size:15px;line-height:1.72;margin-bottom:17px}
+      .actions{gap:9px;margin:17px 0}
+      .actions .btn{flex:1 1 100%;min-height:47px;text-align:center;font-size:12px}
+      .highlights,.panel-grid,.domains,.workflow,.form-row{grid-template-columns:minmax(0,1fr)}
+      .chip,.card,.panel,.step{min-width:0}
+      .hero-visual{order:0;min-height:clamp(180px,50vw,290px);width:100%;border-radius:16px}
+      .hero-globe{object-fit:contain;object-position:center center}
+      .section{padding:23px 0}
+      .section-head{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:18px}
+      .section-head h2,.signal h2{font-size:clamp(26px,7vw,34px);line-height:1.2;overflow-wrap:break-word}
+      .section-head p,.signal p{font-size:15px;line-height:1.65}
+      .panel,.card,.step{padding:20px;min-height:0}
+      .panel h3,.card h3{font-size:22px}
+      .signal{padding:22px;border-radius:18px}
+      .signal-grid,.about,.contact-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+      .signal .quote{font-size:clamp(23px,6vw,30px)}
+      .tor-intel{grid-template-columns:minmax(0,1fr);padding:22px;gap:22px}
+      .tor-intel h2{font-size:clamp(27px,7vw,34px)}
+      .video-shell{border-radius:16px}
+      .video-player{width:100%;max-width:100%;aspect-ratio:1/1}
+      .video-play{width:72px;height:72px;touch-action:manipulation}
+      .video-note{font-size:12px;line-height:1.5}
+      .contact-intro,.contact-panel{padding:22px}
+      .contact-intro h2,.about h2{font-size:clamp(25px,6.7vw,32px)!important;line-height:1.22!important}
+      .contact-form input,.contact-form textarea,.contact-form select{font-size:16px}
+      .contact-form button{width:100%;min-height:46px}
+      .foot{align-items:flex-start;gap:16px}
+      .foot .brand-logo{width:52px!important}
+      .foot .brand-wordmark{font-size:clamp(13px,3.8vw,18px)}
+      .wordmark-heading{overflow-wrap:anywhere}
+    }
+    @media(max-width:360px){
+      .wrap{padding-left:14px;padding-right:14px}
+      .brand-logo{width:56px}
+      .brand-wordmark{font-size:13px}
+      .login-form{gap:5px}
+      .login-form input{padding:9px;font-size:16px}
+      .login-form button{min-width:66px;padding:9px 8px}
+      .hero-wordmark{font-size:clamp(21px,7.3vw,27px)}
+      .subbrand{letter-spacing:.10em}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .btn,.navlinks a,.video-play{transition:none}
+    }
   </style>
 </head>
 <body id="top">
@@ -129,7 +205,7 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="login-shell">
-        <div class="login-caption">User access · Coming soon</div>
+        <div class="login-caption">User access</div>
         <div class="login-form" role="group" aria-label="Future user access, not active">
           <input type="text" placeholder="Username" autocomplete="off" spellcheck="false" aria-label="Username, preview only">
           <input type="password" placeholder="Password" autocomplete="new-password" aria-label="Password, preview only">
