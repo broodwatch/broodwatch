@@ -307,6 +307,87 @@
     }
     @media(prefers-reduced-motion:reduce){.demo-track span,.demo-case{transition:none}}
 
+  
+    /* Executive sample briefing showcase: self-contained and print-ready PDF linked below */
+    .brief-section{padding:50px 0 56px}
+    .brief-card{overflow:hidden;border:1px solid rgba(125,168,196,.3);border-radius:22px;
+      background:linear-gradient(130deg,rgba(11,28,42,.98),rgba(4,12,21,.99));
+      box-shadow:0 22px 68px rgba(0,0,0,.34),0 0 45px rgba(255,49,79,.045)}
+    .brief-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      border-bottom:1px solid rgba(116,152,176,.24);padding:18px 26px;background:#0c2232}
+    .brief-head-brand{display:flex;align-items:center;gap:14px;font:700 11px/1.5 var(--mono);
+      color:#ddeefa;text-transform:uppercase;letter-spacing:.16em}
+    .brief-head-brand:before{content:"";width:20px;height:3px;background:var(--red);
+      box-shadow:0 0 15px rgba(255,49,79,.5)}
+    .brief-synthetic{border:1px solid rgba(255,99,118,.53);border-radius:7px;
+      padding:7px 11px;color:#ffc0c9;background:rgba(255,49,79,.09);
+      font:700 10px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase}
+    .brief-main{padding:28px}
+    .brief-title-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+    .brief-overline{font:700 11px/1.35 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+      color:#a7cade;margin-bottom:12px}
+    .brief-title{font-size:clamp(26px,3.8vw,42px);line-height:1.14;letter-spacing:-.02em;
+      margin:0 0 12px;color:#f3f8fb}
+    .brief-subtitle{color:#9ebbd0;font:600 12px/1.5 var(--mono);letter-spacing:.02em}
+    .brief-metrics{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    .brief-metric{min-width:103px;border:1px solid rgba(123,162,187,.26);border-radius:12px;
+      background:rgba(8,22,34,.94);padding:14px}
+    .brief-metric strong{display:block;font:800 28px/1 var(--mono);color:#f2f8ff}
+    .brief-metric small{display:block;margin-top:7px;font:700 9px/1.35 var(--mono);
+      letter-spacing:.11em;text-transform:uppercase;color:#9cb8c9}
+    .brief-metric.critical strong{color:#ff7387;font-size:18px;padding:5px 0}
+    .brief-separator{height:1px;background:rgba(123,156,180,.17);margin:24px 0}
+    .brief-content{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .brief-panel{min-width:0}
+    .brief-panel h4{font-size:12px;line-height:1.4;letter-spacing:.14em;text-transform:uppercase;
+      color:#ff7186;margin:0 0 11px}
+    .brief-panel p{color:#c4d5df;font-size:15px;line-height:1.73;margin:0 0 16px}
+    .brief-panel ul{margin:0;padding-left:19px;color:#c4d5df;font-size:14px;line-height:1.66}
+    .brief-panel li{margin:9px 0}
+    .brief-panel li::marker{color:#f96c80}
+    .brief-chain{margin-top:27px}
+    .brief-chain h4{margin:0 0 12px;color:#accdde;font:700 11px/1.5 var(--mono);
+      letter-spacing:.14em;text-transform:uppercase}
+    .brief-linkage{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:0}
+    .brief-linkage li{position:relative;padding:13px 10px;border-radius:10px;
+      border:1px solid rgba(117,170,205,.29);background:rgba(14,39,56,.85);
+      color:#e7f1f7;text-align:center;font-size:12px;font-weight:600;line-height:1.5}
+    .brief-linkage li:not(:last-child):after{position:absolute;content:"→";right:-12px;top:34%;
+      color:#ff7587;z-index:1;font-weight:800}
+    .brief-footer{padding:19px 28px;border-top:1px solid rgba(116,152,176,.2);
+      background:rgba(7,15,24,.88);display:flex;align-items:center;justify-content:space-between;
+      gap:16px;flex-wrap:wrap}
+    .brief-fineprint{flex:1 1 380px;color:#a9c1d1;font-size:12px;line-height:1.65;margin:0}
+    .brief-cta{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+      text-align:center;gap:10px;min-height:48px;padding:12px 20px;
+      background:linear-gradient(100deg,#e83b54,#fa6571);color:#fff;font-size:12px;
+      font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px}
+    .brief-cta:hover{filter:brightness(1.07)}
+    .brief-cta:focus-visible{outline:2px solid #a6e4ff;outline-offset:3px}
+    .brief-cta svg{width:16px;height:16px}
+    @media(max-width:990px){
+      .brief-title-row{grid-template-columns:1fr}
+      .brief-metrics{justify-content:flex-start}
+    }
+    @media(max-width:760px){
+      .brief-section{padding:27px 0}
+      .brief-head{padding:15px}
+      .brief-head-brand{font-size:10px}
+      .brief-main{padding:20px 16px}
+      .brief-title{font-size:clamp(26px,7vw,34px)}
+      .brief-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+      .brief-metric{min-width:0;padding:12px 9px}
+      .brief-metric strong{font-size:23px}
+      .brief-metric.critical strong{font-size:13px;padding:5px 0}
+      .brief-metric small{font-size:8px}
+      .brief-content{grid-template-columns:1fr;gap:17px}
+      .brief-linkage{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .brief-linkage li:nth-child(2):after{content:"↓";top:auto;bottom:-19px;right:calc(50% - 5px)}
+      .brief-footer{padding:17px 16px}
+      .brief-cta{width:100%;min-height:50px}
+      .brief-panel p{font-size:14px}
+    }
+
   </style>
 </head>
 <body id="top">
@@ -319,6 +400,7 @@
       <nav class="navlinks">
         <a href="#platform">Platform</a>
         <a href="#intelligence-demo">Dashboard Demo</a>
+        <a href="#sample-briefing">Sample Brief</a>
         <a href="#domains">Threat Domains</a>
         <a href="#tor-intelligence">Dark Web</a>
         <a href="#workflow">Workflow</a>
@@ -454,6 +536,80 @@
           <strong>Demonstration only:</strong> Every scenario, source connection, score, and confidence value displayed here is fabricated for interface demonstration. Nothing on this dashboard is live, verified intelligence or evidence of actual criminal activity. It does not access BROODWATCH's operational database or Tor services.
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section class="section brief-section" id="sample-briefing" aria-labelledby="brief-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Intelligence product example</div>
+          <h2 id="brief-heading">From emerging threat to executive briefing.</h2>
+        </div>
+        <p>See how fragmented indicators can be framed as a concise, decision-ready assessment. This example corresponds to the synthetic-identity scenario in the interactive dashboard.</p>
+      </div>
+      <article class="brief-card" aria-label="Synthetic executive intelligence briefing preview">
+        <div class="brief-head">
+          <div class="brief-head-brand">BROODWATCH / Executive Intelligence Brief / DEMO-01</div>
+          <div class="brief-synthetic">Synthetic demonstration · Not actual intelligence</div>
+        </div>
+        <div class="brief-main">
+          <div class="brief-title-row">
+            <div>
+              <div class="brief-overline">November 2026 · AI-enabled fraud / digital assets</div>
+              <h3 class="brief-title">Synthetic-Identity Payment Funnel</h3>
+              <div class="brief-subtitle">Illustrative assessment · Adversary-centric early-warning analysis</div>
+            </div>
+            <div class="brief-metrics" aria-label="Synthetic assessment metrics">
+              <div class="brief-metric"><strong>86/100</strong><small>Threat score</small></div>
+              <div class="brief-metric"><strong>74%</strong><small>Confidence</small></div>
+              <div class="brief-metric critical"><strong>ESCALATE</strong><small>Demo status</small></div>
+            </div>
+          </div>
+          <div class="brief-separator"></div>
+          <div class="brief-content">
+            <div class="brief-panel">
+              <h4>Executive summary</h4>
+              <p>A fictional cluster of AI-generated identities, impersonation outreach, and repeated payment requests converges on digital-asset conversion. The combined signals illustrate how emerging fraud methods could affect onboarding, payment controls, and AML monitoring.</p>
+              <h4>Key judgments</h4>
+              <ul>
+                <li>AI-enabled impersonation could make fraud campaigns more scalable and convincing.</li>
+                <li>Isolated transaction alerts may miss coordinated, cross-platform behavior.</li>
+                <li>Digital-asset conversion may narrow intervention and asset-recovery windows.</li>
+              </ul>
+            </div>
+            <div class="brief-panel">
+              <h4>Financial-system exposure</h4>
+              <p>In this synthetic case, multiple weak signals collectively point to possible payment fraud, customer harm, and difficulty correlating related activity across business lines.</p>
+              <h4>Recommended analytical actions</h4>
+              <ul>
+                <li>Correlate onboarding, payment, and digital-asset indicators.</li>
+                <li>Verify entity, wallet, and domain associations using independent sources.</li>
+                <li>Escalate validated indicators for analyst review and executive awareness.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="brief-chain">
+            <h4>Evidence connection · Conceptual illustration</h4>
+            <ol class="brief-linkage">
+              <li>Source signal</li>
+              <li>Cloned domains</li>
+              <li>Payment requests</li>
+              <li>Digital-asset off-ramp</li>
+            </ol>
+          </div>
+        </div>
+        <div class="brief-footer">
+          <p class="brief-fineprint"><strong>Disclosure:</strong> All entities, signals, evidence connections, scores, and conclusions are fictional. This is a sample intelligence product, not verified reporting or investigative findings.</p>
+          <a class="brief-cta" href="BROODWATCH_Sample_Executive_Brief.pdf" download="BROODWATCH_Sample_Executive_Brief.pdf" type="application/pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Download sample briefing (PDF)
+          </a>
+        </div>
+      </article>
     </div>
   </section>
 
