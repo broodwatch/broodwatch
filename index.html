@@ -467,14 +467,14 @@
           <p class="form-privacy">For general professional inquiries only. Please do not submit classified, confidential, protected investigative, or personal financial information.</p>
         </div>
         <div class="contact-panel">
-          <div class="contact-offline" id="contact-offline">
+          <div class="contact-offline" id="contact-offline" hidden>
             <div class="status">Professional contact channel</div>
             <h3>Connect privately.</h3>
             <p>Reach out directly on LinkedIn to discuss BROODWATCH, emerging financial threats, intelligence applications, or collaboration. A secure website inquiry form is being configured.</p>
             <a class="btn primary" href="https://www.linkedin.com/in/todd-porinsky-6a8307349" target="_blank" rel="noopener noreferrer" aria-label="Contact BROODWATCH's developer on LinkedIn">Message on LinkedIn ↗</a>
             <p class="form-privacy" style="margin-top:16px">No personal email address is published on this website.</p>
           </div>
-          <form id="broodwatch-contact-form" class="contact-form" method="POST" accept-charset="UTF-8" hidden aria-label="Contact BROODWATCH">
+          <form id="broodwatch-contact-form" class="contact-form" action="https://formspree.io/f/meagknyn" method="POST" accept-charset="UTF-8" aria-label="Contact BROODWATCH">
             <h3>Send a professional inquiry.</h3>
             <div class="form-row">
               <label>Full name <input name="name" type="text" autocomplete="name" maxlength="120" required placeholder="Your name"></label>
@@ -515,16 +515,6 @@
       commercial.addEventListener('loadedmetadata', ready);
       commercial.addEventListener('canplay', ready);
       if (commercial.readyState >= 1) ready();
-    }
-    /* To activate: insert only the Formspree endpoint URL (never a private email).
-       Example: https://formspree.io/f/your-form-id */
-    const broodwatchFormspreeEndpoint = "";
-    const contactForm = document.getElementById("broodwatch-contact-form");
-    const contactOffline = document.getElementById("contact-offline");
-    if (/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(broodwatchFormspreeEndpoint)) {
-      contactForm.action = broodwatchFormspreeEndpoint;
-      contactForm.hidden = false;
-      contactOffline.hidden = true;
     }
 
   </script>
