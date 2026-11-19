@@ -186,6 +186,127 @@
       html{scroll-behavior:auto}
       .btn,.navlinks a,.video-play{transition:none}
     }
+  
+    /* Independent, clearly synthetic dashboard demonstration */
+    .demo-section{padding:54px 0}
+    .demo-shell{border:1px solid rgba(100,151,185,.34);border-radius:22px;overflow:hidden;
+      background:linear-gradient(145deg,#071321 0%,#040a12 70%);
+      box-shadow:0 25px 75px rgba(0,0,0,.38),0 0 42px rgba(50,137,183,.06)}
+    .demo-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;
+      padding:20px 24px;border-bottom:1px solid rgba(113,159,185,.2);
+      background:linear-gradient(90deg,rgba(22,44,63,.58),rgba(17,26,39,.46))}
+    .demo-kicker{font:700 11px/1.5 var(--mono);letter-spacing:.14em;color:#b8d6e6;text-transform:uppercase}
+    .demo-kicker:before{content:"";display:inline-block;background:var(--red);width:8px;height:8px;
+      margin-right:10px;box-shadow:0 0 11px rgba(255,49,79,.6);border-radius:2px}
+    .demo-disclaimer{font:600 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+      color:#e2b5bd;padding:7px 10px;border:1px solid rgba(255,91,111,.35);
+      background:rgba(255,49,79,.07);border-radius:7px}
+    .demo-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+      border-bottom:1px solid rgba(113,159,185,.15)}
+    .demo-stat{padding:21px 24px;min-width:0;border-right:1px solid rgba(113,159,185,.14)}
+    .demo-stat:last-child{border-right:0}
+    .demo-stat strong{display:block;font:700 clamp(25px,2.8vw,36px)/1.12 var(--mono);color:#f3f8fc}
+    .demo-stat small{display:block;margin-top:8px;color:#91b1c6;letter-spacing:.12em;font-size:10px;
+      text-transform:uppercase;font-weight:700}
+    .demo-toolbar{display:grid;grid-template-columns:1.2fr 1fr .85fr;gap:12px;padding:18px 24px;
+      border-bottom:1px solid rgba(113,159,185,.15)}
+    .demo-control{display:grid;gap:7px;min-width:0}
+    .demo-control label{font:700 10px/1.3 var(--mono);letter-spacing:.13em;
+      text-transform:uppercase;color:#a7c3d5}
+    .demo-control input,.demo-control select{min-width:0;width:100%;min-height:44px;border:1px solid #29485e;
+      background:#081624;border-radius:9px;padding:11px 12px;
+      font:15px/1.4 var(--sans);color:#eef6fb}
+    .demo-control input:focus-visible,.demo-control select:focus-visible,.demo-case:focus-visible,.demo-copy:focus-visible{
+      outline:2px solid #9bd8ff;outline-offset:2px}
+    .demo-main{display:grid;grid-template-columns:minmax(280px, .88fr) minmax(0,1.25fr);min-height:570px}
+    .demo-radar{min-width:0;border-right:1px solid rgba(113,159,185,.18)}
+    .demo-column-label{display:flex;justify-content:space-between;gap:10px;align-items:center;
+      color:#a1c0d3;letter-spacing:.13em;text-transform:uppercase;
+      font:700 10px/1.4 var(--mono);padding:16px 20px;border-bottom:1px solid rgba(113,159,185,.1)}
+    .demo-case-list{padding:10px;display:grid;gap:8px;align-content:start;max-height:670px;overflow-y:auto}
+    .demo-case{width:100%;display:block;text-align:left;border:1px solid rgba(102,144,170,.2);
+      background:#091724;padding:15px;border-radius:12px;cursor:pointer;
+      color:#ecf4f9;font:inherit;transition:background .15s,border-color .15s}
+    .demo-case:hover{background:#102338;border-color:rgba(115,186,221,.42)}
+    .demo-case[aria-pressed="true"]{background:linear-gradient(100deg,rgba(22,51,72,.82),rgba(9,23,36,.88));
+      border-color:#ff5269;box-shadow:inset 3px 0 0 #ff5269}
+    .demo-case-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .demo-case-id{font:700 10px/1.3 var(--mono);letter-spacing:.08em;color:#84b1cc}
+    .demo-case-score{font:700 22px/1 var(--mono);color:#f4f8fc}
+    .demo-case-title{font-size:15px;font-weight:700;margin-top:5px;line-height:1.45}
+    .demo-case-meta{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:8px;margin-top:11px;font-size:11px;color:#a0bcd1}
+    .demo-tag{display:inline-flex;align-items:center;border:1px solid rgba(165,199,220,.26);
+      border-radius:999px;padding:4px 8px;font:700 10px/1.2 var(--mono);letter-spacing:.04em}
+    .demo-tag.escalate{color:#ff9ba9;border-color:rgba(255,91,112,.48);background:rgba(255,49,79,.08)}
+    .demo-tag.investigate{color:#ffd39b;border-color:rgba(240,173,100,.4);background:rgba(240,173,100,.08)}
+    .demo-tag.watch{color:#b0e7ec;border-color:rgba(92,205,214,.35);background:rgba(92,205,214,.07)}
+    .demo-detail{padding:22px 26px;min-width:0}
+    .demo-detail[hidden],.demo-empty[hidden]{display:none!important}
+    .demo-detail-head{display:flex;justify-content:space-between;gap:16px;align-items:start}
+    .demo-detail h3{font-size:clamp(22px,2.5vw,30px);line-height:1.16;margin:6px 0 12px}
+    .demo-detail p{font-size:14px;line-height:1.7;color:#b7cbd9}
+    .demo-detail .demo-score{font:800 38px/1 var(--mono);color:#f2f8ff;text-align:right}
+    .demo-detail .demo-score small{display:block;margin-top:8px;font:600 10px/1.3 var(--mono);
+      color:#91b0c4;text-transform:uppercase;letter-spacing:.12em}
+    .demo-detail .demo-score span{color:var(--red)}
+    .demo-divider{height:1px;background:rgba(113,159,185,.17);margin:19px 0}
+    .demo-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .demo-meter-label{display:flex;justify-content:space-between;gap:8px;color:#a8c6d9;
+      font:600 11px/1.3 var(--mono);letter-spacing:.01em;margin-bottom:8px}
+    .demo-track{height:7px;overflow:hidden;border-radius:6px;background:#1a3042}
+    .demo-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#5290b8,#ed536a);
+      border-radius:6px;transition:width .2s}
+    .demo-subhead{font:700 11px/1.4 var(--mono);text-transform:uppercase;
+      letter-spacing:.15em;color:#e2eef5;margin:0 0 11px}
+    .demo-chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+    .demo-chain li{position:relative;min-width:0;display:grid;align-content:center;text-align:center;
+      min-height:66px;padding:10px 7px;border:1px solid #24465b;border-radius:9px;
+      background:rgba(17,39,56,.7);color:#e6f1f8;font-size:12px;line-height:1.35}
+    .demo-chain li:not(:last-child):after{content:"→";position:absolute;right:-12px;top:34%;
+      z-index:2;color:#ff7185;font-size:16px;font-weight:800}
+    .demo-brief{display:grid;grid-template-columns:1fr;gap:8px;padding:14px 16px;
+      border-left:3px solid var(--red);background:#0b1a29;border-radius:0 8px 8px 0}
+    .demo-brief strong{color:#f0f7fb;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .demo-brief p{margin:0 0 8px}
+    .demo-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:15px}
+    .demo-copy{border:1px solid #416b84;border-radius:999px;color:#f0f7fb;
+      background:#112b3e;padding:11px 16px;cursor:pointer;font:700 12px var(--sans)}
+    .demo-copy:hover{border-color:#b4d8ed}
+    .demo-copy-note{font-size:11px!important;color:#90aebf!important;margin:0}
+    .demo-empty{padding:26px 16px;color:#acc5d3;font-size:14px;line-height:1.6}
+    .demo-footnote{padding:14px 24px;border-top:1px solid rgba(113,159,185,.15);
+      background:rgba(7,16,27,.75);color:#9ab5c6;line-height:1.6;font-size:12px}
+    @media(max-width:920px){
+      .demo-main{grid-template-columns:1fr}
+      .demo-radar{border-right:0;border-bottom:1px solid rgba(113,159,185,.18)}
+      .demo-case-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none}
+    }
+    @media(max-width:760px){
+      .demo-section{padding:30px 0}
+      .demo-top{padding:16px;align-items:flex-start}
+      .demo-disclaimer{font-size:10px}
+      .demo-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .demo-stat{padding:17px}
+      .demo-stat:nth-child(2){border-right:0}
+      .demo-stat:nth-child(-n+2){border-bottom:1px solid rgba(113,159,185,.14)}
+      .demo-stat strong{font-size:29px}
+      .demo-toolbar{grid-template-columns:1fr;gap:10px;padding:16px}
+      .demo-case-list{grid-template-columns:1fr;max-height:none}
+      .demo-column-label{padding:14px 16px}
+      .demo-detail{padding:18px 16px}
+      .demo-detail h3{font-size:23px}
+      .demo-detail .demo-score{font-size:30px}
+      .demo-metrics{gap:14px 10px}
+      .demo-chain{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .demo-chain li:nth-child(2):after{content:"↓";top:auto;right:calc(50% - 7px);bottom:-17px}
+      .demo-chain li:nth-child(3):after{content:"→"}
+      .demo-chain li{min-height:62px}
+      .demo-footnote{padding:13px 16px}
+      .demo-copy{min-height:44px}
+    }
+    @media(prefers-reduced-motion:reduce){.demo-track span,.demo-case{transition:none}}
+
   </style>
 </head>
 <body id="top">
@@ -197,6 +318,7 @@
       </a>
       <nav class="navlinks">
         <a href="#platform">Platform</a>
+        <a href="#intelligence-demo">Dashboard Demo</a>
         <a href="#domains">Threat Domains</a>
         <a href="#tor-intelligence">Dark Web</a>
         <a href="#workflow">Workflow</a>
@@ -225,7 +347,7 @@
         <p class="summary"><span class="bw-inline"><span class="brood">BROOD</span><span class="watch">WATCH</span></span> is an independently developed, adversary-centric executive intelligence platform designed to identify emerging financial-crime and national-security threats by following the signals criminals create, connecting the evidence they leave behind, and translating early indicators into actionable insight.</p>
         <div class="actions">
           <a class="btn primary" href="#overview">Watch the commercial</a>
-          <a class="btn secondary" href="#domains">Explore the platform</a>
+          <a class="btn secondary" href="#intelligence-demo">Explore dashboard demo</a>
           <a class="btn secondary" href="#contact">Contact BROODWATCH</a>
         </div>
         <div class="highlights">
@@ -236,6 +358,101 @@
       </div>
       <div class="hero-visual" aria-label="BROODWATCH globe — global financial threat intelligence" role="img">
         <img class="hero-globe" src="broodwatch-globe-header-460.png" alt="" aria-hidden="true" decoding="async">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section demo-section" id="intelligence-demo" aria-labelledby="demo-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Interactive platform preview</div>
+          <h2 id="demo-heading">Intelligence from signals to decisions.</h2>
+        </div>
+        <p>Explore a working example of how BROODWATCH can prioritize emerging criminal methods, connect the evidence, and frame financial-system exposure for executive review.</p>
+      </div>
+      <div class="demo-shell" id="demo-app">
+        <div class="demo-top">
+          <div class="demo-kicker">BROODWATCH / Threat Radar / Sample Workspace</div>
+          <div class="demo-disclaimer">Synthetic scenarios · No live intelligence</div>
+        </div>
+        <div class="demo-stats" aria-label="Demonstration statistics">
+          <div class="demo-stat"><strong id="demo-total">6</strong><small>Demo scenarios</small></div>
+          <div class="demo-stat"><strong id="demo-escalate">2</strong><small>Escalation examples</small></div>
+          <div class="demo-stat"><strong id="demo-average">69%</strong><small>Mean confidence</small></div>
+          <div class="demo-stat"><strong id="demo-visible" aria-live="polite">6</strong><small>Matching scenarios</small></div>
+        </div>
+        <div class="demo-toolbar" aria-label="Filter synthetic threat scenarios">
+          <div class="demo-control">
+            <label for="demo-search">Search scenarios</label>
+            <input id="demo-search" type="search" placeholder="Try: ransomware, sanctions, fraud" autocomplete="off">
+          </div>
+          <div class="demo-control">
+            <label for="demo-domain">Threat domain</label>
+            <select id="demo-domain">
+              <option value="all">All domains</option>
+              <option value="AI-enabled fraud">AI-enabled fraud</option>
+              <option value="Digital assets">Digital assets</option>
+              <option value="Sanctions evasion">Sanctions evasion</option>
+              <option value="Ransomware">Ransomware</option>
+              <option value="Transnational networks">Transnational networks</option>
+              <option value="Dark-web trends">Dark-web trends</option>
+            </select>
+          </div>
+          <div class="demo-control">
+            <label for="demo-status">Escalation status</label>
+            <select id="demo-status">
+              <option value="all">All statuses</option>
+              <option value="ESCALATE">Escalate</option>
+              <option value="INVESTIGATE">Investigate</option>
+              <option value="WATCH">Watch</option>
+            </select>
+          </div>
+        </div>
+        <div class="demo-main">
+          <div class="demo-radar">
+            <div class="demo-column-label"><span>Illustrative threat queue</span><span>Score / 100</span></div>
+            <div class="demo-case-list" id="demo-case-list" aria-label="Select a synthetic threat scenario"></div>
+            <div id="demo-no-results" class="demo-empty" hidden>No synthetic scenarios match these filters. Try another search or domain.</div>
+          </div>
+          <article class="demo-detail" id="demo-detail" aria-label="Selected synthetic intelligence assessment">
+            <div class="demo-detail-head">
+              <div>
+                <div class="demo-column-label" style="padding:0;border:0" id="demo-selected-id">DEMO-01 · AI-enabled fraud</div>
+                <h3 id="demo-selected-title">Synthetic-identity payment funnel</h3>
+                <span id="demo-selected-status" class="demo-tag escalate">ESCALATE</span>
+              </div>
+              <div class="demo-score"><span id="demo-selected-score">86</span><small>Threat score</small></div>
+            </div>
+            <p id="demo-selected-summary">Illustrative scenario only.</p>
+            <div class="demo-divider"></div>
+            <h4 class="demo-subhead">Illustrative threat indicators</h4>
+            <div class="demo-metrics" id="demo-metrics">
+              <div><div class="demo-meter-label"><span>Novelty</span><span data-value="novelty">0%</span></div><div class="demo-track"><span data-bar="novelty"></span></div></div>
+              <div><div class="demo-meter-label"><span>Foreign nexus</span><span data-value="foreign">0%</span></div><div class="demo-track"><span data-bar="foreign"></span></div></div>
+              <div><div class="demo-meter-label"><span>Financial exposure</span><span data-value="exposure">0%</span></div><div class="demo-track"><span data-bar="exposure"></span></div></div>
+              <div><div class="demo-meter-label"><span>Velocity</span><span data-value="velocity">0%</span></div><div class="demo-track"><span data-bar="velocity"></span></div></div>
+            </div>
+            <div class="demo-divider"></div>
+            <h4 class="demo-subhead">Evidence connection · Conceptual illustration</h4>
+            <ol class="demo-chain" id="demo-chain" aria-label="Illustrative evidence connections"></ol>
+            <div class="demo-divider"></div>
+            <h4 class="demo-subhead">Executive assessment preview</h4>
+            <div class="demo-brief">
+              <strong>Financial-system implication</strong><p id="demo-exposure"></p>
+              <strong>Recommended analytical next step</strong><p id="demo-next-step"></p>
+            </div>
+            <div class="demo-bottom">
+              <p class="demo-copy-note">Synthetic confidence: <strong id="demo-confidence">74%</strong> · Scenario data is illustrative.</p>
+              <button class="demo-copy" type="button" id="demo-copy">Copy sample brief</button>
+            </div>
+            <p id="demo-copy-status" class="demo-copy-note" role="status" aria-live="polite"></p>
+          </article>
+        </div>
+        <div class="demo-footnote">
+          <strong>Demonstration only:</strong> Every scenario, source connection, score, and confidence value displayed here is fabricated for interface demonstration. Nothing on this dashboard is live, verified intelligence or evidence of actual criminal activity. It does not access BROODWATCH's operational database or Tor services.
+        </div>
       </div>
     </div>
   </section>
@@ -314,6 +531,152 @@
       commercial.addEventListener('pause', () => videoPlayer.classList.remove('is-playing'));
       commercial.addEventListener('ended', () => videoPlayer.classList.remove('is-playing'));
     }
+
+    // Self-contained public dashboard demo. All records below are fictional.
+    (() => {
+      const root = document.getElementById('demo-app');
+      if (!root) return;
+      const scenarios = [
+        {
+          id:'DEMO-01',domain:'AI-enabled fraud',title:'Synthetic-identity payment funnel',
+          score:86,confidence:74,status:'ESCALATE',novelty:88,foreign:61,exposure:83,velocity:90,
+          summary:'Simulated impersonation domains and synthetic identities converge on repeat payment requests and digital-asset conversion.',
+          chain:['Open-source mention','Cloned web domains','Linked payment requests','Fintech exposure'],
+          implication:'A hypothetical cluster could strain identity controls and create exposure at payment initiation and digital-asset conversion.',
+          next:'Corroborate distinct sources, test the entity links, and escalate validated indicators to fraud and AML analysts.'
+        },
+        {
+          id:'DEMO-02',domain:'Digital assets',title:'Stablecoin settlement-route shift',
+          score:82,confidence:68,status:'ESCALATE',novelty:80,foreign:89,exposure:81,velocity:78,
+          summary:'Synthetic reporting depicts repeated settlement requests moving between newly observed wallet clusters and regional brokers.',
+          chain:['Simulated forum post','Broker identity','Wallet cluster','Institutional off-ramp'],
+          implication:'Potential blind spots could emerge where transaction monitoring lacks context for cross-border intermediaries.',
+          next:'Validate wallet attribution and distinguish legitimate cross-border settlement from potentially illicit layering.'
+        },
+        {
+          id:'DEMO-03',domain:'Sanctions evasion',title:'Informal broker-network convergence',
+          score:78,confidence:76,status:'INVESTIGATE',novelty:72,foreign:92,exposure:77,velocity:69,
+          summary:'A fictional hawala-style settlement pattern connects intermediary entities, trading fronts, and mirrored payment instructions.',
+          chain:['Overseas reporting','Broker aliases','Trading fronts','Correspondent exposure'],
+          implication:'Simulated intermediaries may obscure beneficial ownership and complicate sanctions and counterparty screening.',
+          next:'Cross-check entity resolution, jurisdictional exposure, and independent corroboration before reaching conclusions.'
+        },
+        {
+          id:'DEMO-04',domain:'Ransomware',title:'Extortion-payment pattern change',
+          score:75,confidence:65,status:'INVESTIGATE',novelty:76,foreign:66,exposure:74,velocity:85,
+          summary:'Fictional extortion chatter suggests changing payment instructions and reuse of infrastructure across simulated incidents.',
+          chain:['Fictional incident','Negotiation portal','Payment instructions','Exposure review'],
+          implication:'New payment tactics could increase response complexity for financial institutions and their corporate clients.',
+          next:'Compare independent incident reports and review payment typology indicators without attributing activity prematurely.'
+        },
+        {
+          id:'DEMO-05',domain:'Transnational networks',title:'Precursor logistics-shell overlap',
+          score:71,confidence:70,status:'INVESTIGATE',novelty:69,foreign:95,exposure:63,velocity:61,
+          summary:'A hypothetical supply-chain pattern connects freight intermediaries, shell-company records, and irregular invoice narratives.',
+          chain:['Trade reference','Freight intermediary','Company overlap','Invoice anomaly'],
+          implication:'Layered trading entities could complicate recognition of precursor sourcing and illicit-finance facilitation.',
+          next:'Validate ownership, shipment context, and source independence before proposing a network-level assessment.'
+        },
+        {
+          id:'DEMO-06',domain:'Dark-web trends',title:'Underground fraud-tool discussion',
+          score:69,confidence:62,status:'WATCH',novelty:84,foreign:57,exposure:54,velocity:73,
+          summary:'A wholly fabricated Tor-forum discussion describes an emerging fraud-service model and attempts to advertise new tooling.',
+          chain:['Synthetic Tor post','Technique mention','Actor alias','Financial risk hypothesis'],
+          implication:'Unverified criminal-market claims may foreshadow new fraud methods, but discussion alone does not establish adoption.',
+          next:'Watch for independent confirmation and distinguish advertising claims from observed implementation.'
+        }
+      ];
+      const byId = id => document.getElementById(id);
+      const list = byId('demo-case-list'), detail = byId('demo-detail'), empty = byId('demo-no-results');
+      const search = byId('demo-search'), domain = byId('demo-domain'), status = byId('demo-status');
+      let selected = scenarios[0].id;
+      const make = (tag, cls, value) => {
+        const el = document.createElement(tag);
+        if (cls) el.className = cls;
+        if (value !== undefined) el.textContent = String(value);
+        return el;
+      };
+      const statusClass = value => value.toLowerCase();
+      const avg = Math.round(scenarios.reduce((n,c)=>n+c.confidence,0)/scenarios.length);
+      byId('demo-total').textContent = scenarios.length;
+      byId('demo-escalate').textContent = scenarios.filter(c=>c.status==='ESCALATE').length;
+      byId('demo-average').textContent = avg + '%';
+      const filtered = () => {
+        const q = search.value.trim().toLowerCase();
+        return scenarios.filter(c =>
+          (domain.value === 'all' || c.domain === domain.value) &&
+          (status.value === 'all' || c.status === status.value) &&
+          (!q || [c.id,c.title,c.domain,c.summary,c.status].some(v=>v.toLowerCase().includes(q)))
+        ).sort((a,b)=>b.score-a.score);
+      };
+      function showDetail(c) {
+        if (!c) { detail.hidden=true; return; }
+        detail.hidden=false;
+        byId('demo-selected-id').textContent = c.id + ' · ' + c.domain;
+        byId('demo-selected-title').textContent = c.title;
+        byId('demo-selected-score').textContent = c.score;
+        const label=byId('demo-selected-status');
+        label.className='demo-tag ' + statusClass(c.status);
+        label.textContent=c.status;
+        byId('demo-selected-summary').textContent=c.summary;
+        for(const k of ['novelty','foreign','exposure','velocity']){
+          const val=String(c[k])+'%';
+          const bar=root.querySelector('[data-bar="'+k+'"]');
+          const text=root.querySelector('[data-value="'+k+'"]');
+          if (bar) bar.style.width=val;
+          if (text) text.textContent=val;
+        }
+        const chain=byId('demo-chain');
+        chain.replaceChildren(...c.chain.map(value=>make('li','',value)));
+        byId('demo-exposure').textContent=c.implication;
+        byId('demo-next-step').textContent=c.next;
+        byId('demo-confidence').textContent=c.confidence+'%';
+        byId('demo-copy-status').textContent='';
+      }
+      function render() {
+        const items=filtered();
+        if(!items.some(c=>c.id===selected))selected=items.length?items[0].id:null;
+        list.replaceChildren();
+        byId('demo-visible').textContent=items.length;
+        empty.hidden=items.length>0;
+        items.forEach(c=>{
+          const button=make('button','demo-case');
+          button.type='button';
+          button.setAttribute('aria-pressed',String(c.id===selected));
+          button.setAttribute('aria-label',c.title+', synthetic score '+c.score+', '+c.status+'. Select assessment.');
+          const top=make('div','demo-case-top');
+          top.append(make('span','demo-case-id',c.id+' · '+c.domain),make('span','demo-case-score',c.score));
+          const name=make('div','demo-case-title',c.title);
+          const meta=make('div','demo-case-meta');
+          meta.append(make('span','demo-tag '+statusClass(c.status),c.status),
+                      make('span','',c.confidence+'% confidence'));
+          button.append(top,name,meta);
+          button.addEventListener('click',()=>{selected=c.id;render();});
+          list.append(button);
+        });
+        showDetail(items.find(c=>c.id===selected));
+      }
+      for(const control of [search,domain,status]){
+        control.addEventListener(control===search?'input':'change',render);
+      }
+      byId('demo-copy').addEventListener('click',async()=>{
+        const c=scenarios.find(x=>x.id===selected);
+        if(!c) return;
+        const copyText='BROODWATCH — SYNTHETIC DEMONSTRATION ONLY\n'
+          +c.title+' | Threat score: '+c.score+'/100 | Confidence: '+c.confidence+'% | '+c.status
+          +'\nAssessment: '+c.summary+'\nFinancial-system implication: '+c.implication
+          +'\nNext analytical step: '+c.next
+          +'\nAll data fictional. Not operational intelligence.';
+        try{
+          await navigator.clipboard.writeText(copyText);
+          byId('demo-copy-status').textContent='Sample brief copied (synthetic data only).';
+        }catch(_){
+          byId('demo-copy-status').textContent='Clipboard unavailable. Select the assessment text above to copy.';
+        }
+      });
+      render();
+    })();
+
   </script>
 </body>
 </html>
