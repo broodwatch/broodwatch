@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BROODWATCH | Emerging Financial Threat Intelligence</title>
+  <meta name="theme-color" content="#03070c">
+  <meta name="description" content="BROODWATCH is an independently developed executive intelligence platform focused on emerging financial-crime and national-security threats.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Michroma&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#03070c;--bg2:#07111a;--panel:#08111b;--text:#eef6fb;--muted:#a9bccb;
+      --red:#ff314f;--red2:#ff505f;--blue:#8adaff;--line:#173042;
+      --glow:0 0 30px rgba(255,49,79,.18),0 0 80px rgba(56,156,255,.10);
+      --radius:20px;--max:1240px;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      --sans:Inter,Segoe UI,Arial,sans-serif;--brand:Michroma,Orbitron,Arial Black,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--sans);color:var(--text);background:
+      radial-gradient(circle at 18% 8%, rgba(36,122,182,.18), transparent 25%),
+      radial-gradient(circle at 82% 10%, rgba(255,49,79,.16), transparent 22%),
+      radial-gradient(circle at 50% 50%, rgba(12,25,40,.8), transparent 55%),
+      linear-gradient(180deg,#02060a 0%,#03070c 40%,#07111a 100%);min-height:100vh;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(rgba(73,96,117,.18) 1px, transparent 1px),linear-gradient(90deg, rgba(73,96,117,.18) 1px, transparent 1px);background-size:36px 36px;mask-image:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.04))}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .broodwatch-wordmark,.brand-wordmark,.hero-wordmark,.bw-inline{font-family:var(--brand);text-transform:uppercase;letter-spacing:.14em;line-height:.94}
+    .brand-wordmark .brood,.hero-wordmark .brood,.bw-inline .brood{color:#f6fbff;text-shadow:0 0 14px rgba(255,255,255,.07)}
+    .brand-wordmark .watch,.hero-wordmark .watch,.bw-inline .watch{color:var(--red);text-shadow:0 0 25px rgba(255,49,79,.48)}
+    .brand-wordmark{font-size:24px}
+    .bw-inline{font-size:1em}
+    .topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);background:linear-gradient(180deg, rgba(3,7,12,.95), rgba(3,7,12,.72));border-bottom:1px solid rgba(115,148,173,.12)}
+    .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;min-height:94px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logo{width:96px;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(255,49,79,.22)) drop-shadow(0 0 20px rgba(87,174,255,.16))}
+    .navlinks{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+    .navlinks a{transition:.2s color}.navlinks a:hover{color:var(--text)}
+    .login-shell{display:flex;flex-direction:column;gap:7px;align-items:flex-end}
+    .login-caption{font:600 10px/1.2 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#90a7b7}
+    .login-form{display:flex;gap:8px;align-items:center}
+    .login-form input{width:118px;padding:10px 12px;border-radius:999px;border:1px solid #274154;background:rgba(7,18,30,.92);color:#eef6fb;font:13px var(--sans);outline:none}
+    .login-form input::placeholder{color:#90a5b5}
+    .login-form button{padding:10px 14px;border-radius:999px;border:1px solid #3b5b71;background:linear-gradient(180deg, rgba(10,22,34,.96), rgba(5,12,19,.96));color:#f0f5f9;font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+    .login-note{font-size:11px;color:#91a7b6;text-align:right;max-width:310px}
+    .hero{position:relative;padding:64px 0 42px;overflow:hidden}.hero:before{content:"";position:absolute;left:-8%;right:-8%;bottom:0;height:1px;background:linear-gradient(90deg,transparent, rgba(111,139,161,.18), transparent)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:#dce7ef;font-size:12px;text-transform:uppercase;letter-spacing:.22em;margin-bottom:18px}.eyebrow:before{content:"";display:block;width:24px;height:2px;background:var(--red);box-shadow:0 0 12px rgba(255,49,79,.75)}
+    .hero-wordmark{margin:0 0 12px;font-size:clamp(44px,8vw,92px);font-weight:400}
+    .subbrand{font-size:clamp(14px,1.9vw,22px);letter-spacing:.34em;text-transform:uppercase;color:#d9e4ec;margin-bottom:22px}
+    .lede{font-size:clamp(18px,2vw,26px);line-height:1.35;font-weight:600;max-width:760px;margin:0 0 12px}.lede .red{color:#ff6477}
+    .summary{max-width:650px;color:var(--muted);font-size:17px;line-height:1.72;margin:0 0 26px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase;border:1px solid transparent;transition:.2s transform,.2s border-color,.2s background}.btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(90deg,var(--red),#ff5a57);color:#fff;box-shadow:0 10px 35px rgba(255,49,79,.25)}
+    .btn.secondary{border-color:#214057;background:rgba(10,21,32,.66);color:#deebf3}.btn.secondary:hover{border-color:#3e6b88}
+    .highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:780px}
+    .chip{padding:15px 16px;border:1px solid rgba(91,121,145,.2);border-radius:16px;background:linear-gradient(180deg, rgba(10,18,27,.88), rgba(6,12,18,.82));box-shadow:var(--glow)}
+    .chip b{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:7px;color:#d7e2ea}.chip span{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+    .hero-visual{position:relative;min-height:560px}.beam{position:absolute;left:50%;top:10px;transform:translateX(-50%);width:4px;height:365px;background:linear-gradient(180deg, rgba(255,49,79,.1), rgba(255,49,79,.98), rgba(255,49,79,.15));box-shadow:0 0 16px rgba(255,49,79,.8),0 0 55px rgba(255,49,79,.4);z-index:4;border-radius:999px}
+    .globe{position:absolute;left:50%;top:30px;transform:translateX(-50%);width:min(100%,540px);aspect-ratio:1/1;border-radius:50%;border:1px solid rgba(176,226,255,.34);box-shadow:inset 0 0 70px rgba(32,95,143,.15),0 0 60px rgba(78,171,255,.12);background:radial-gradient(circle at 50% 47%, rgba(21,61,91,.30), rgba(7,14,22,.08) 58%, transparent 72%),repeating-linear-gradient(90deg, transparent 0 42px, rgba(142,200,236,.1) 43px, transparent 44px),repeating-linear-gradient(0deg, transparent 0 42px, rgba(142,200,236,.1) 43px, transparent 44px),radial-gradient(circle at 50% 50%, rgba(255,255,255,.04), rgba(0,0,0,.02));overflow:hidden}
+    .globe:before,.globe:after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none}
+    .globe:before{background:radial-gradient(circle at 25% 44%, rgba(163,226,255,.68) 0 1px, transparent 2px),radial-gradient(circle at 32% 47%, rgba(163,226,255,.9) 0 1px, transparent 2px),radial-gradient(circle at 37% 52%, rgba(163,226,255,.75) 0 1px, transparent 2px),radial-gradient(circle at 63% 36%, rgba(255,59,77,.92) 0 1.5px, transparent 2.8px),radial-gradient(circle at 70% 44%, rgba(255,59,77,.85) 0 1.2px, transparent 2.6px),radial-gradient(circle at 80% 53%, rgba(255,59,77,.95) 0 1.4px, transparent 2.8px),radial-gradient(circle at 76% 61%, rgba(255,59,77,.92) 0 1.2px, transparent 2.8px),radial-gradient(circle at 59% 52%, rgba(255,59,77,.8) 0 1.2px, transparent 2.8px),radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), transparent 70%);filter:drop-shadow(0 0 6px rgba(255,49,79,.38));opacity:.95}
+    .globe:after{background:linear-gradient(90deg, transparent 0 48%, rgba(255,49,79,.46) 49.4%, rgba(255,49,79,.98) 50%, rgba(255,49,79,.42) 50.6%, transparent 52%),radial-gradient(circle at 50% 50%, transparent 0 76%, rgba(124,204,255,.35) 77%, transparent 78%),radial-gradient(circle at 50% 50%, transparent 0 60%, rgba(124,204,255,.18) 61%, transparent 62%),linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.15));mix-blend-mode:screen}
+    .orbit{position:absolute;left:50%;top:30px;transform:translateX(-50%);width:min(100%,540px);aspect-ratio:1/1;border-radius:50%;pointer-events:none}.orbit i,.orbit i:before,.orbit i:after{content:"";position:absolute;border:1px solid rgba(138,218,255,.28);border-radius:50%}
+    .orbit i:nth-child(1){inset:56px 18px}.orbit i:nth-child(2){inset:18px 56px}.orbit i:nth-child(3){left:-8%;right:-8%;top:39%;height:22%}.orbit i:nth-child(4){left:8%;right:8%;top:18%;bottom:18%;transform:rotate(24deg)}.orbit i:nth-child(5){left:10%;right:10%;top:18%;bottom:18%;transform:rotate(-28deg);border-color:rgba(255,49,79,.28)}
+    .node{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 15px rgba(255,49,79,.75)}.node.blue{background:#d9f4ff;box-shadow:0 0 15px rgba(162,228,255,.75)}.n1{left:13%;top:38%}.n2{left:84%;top:32%}.n3{left:71%;top:18%}.n4{left:77%;top:61%}.n5{left:24%;top:63%}.n6{left:46%;top:79%}.n7{left:8%;top:53%}.n8{left:91%;top:49%}.scanline{position:absolute;left:0;right:0;bottom:34px;height:130px;background:linear-gradient(180deg, rgba(255,49,79,0), rgba(255,49,79,.09) 30%, rgba(255,49,79,.18) 55%, rgba(255,49,79,0));filter:blur(4px)}
+    .section{padding:34px 0}.panel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .panel{position:relative;padding:24px;border-radius:var(--radius);border:1px solid rgba(93,122,146,.18);background:linear-gradient(180deg, rgba(8,17,27,.90), rgba(6,11,18,.88));box-shadow:var(--glow);overflow:hidden}.panel:before{content:"";position:absolute;left:0;top:0;height:3px;width:120px;background:linear-gradient(90deg,var(--red), transparent)}
+    .panel h3,.contact-panel h3{margin:0 0 8px;font-size:28px;line-height:1.12}.panel p{margin:0;color:var(--muted);line-height:1.65;font-size:15px}.panel .accent{color:#ff6a7a}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}.section-head h2{margin:0;font-size:36px;line-height:1.08}.section-head p{margin:0;max-width:700px;color:var(--muted);line-height:1.7;font-size:16px}
+    .wordmark-heading{font-family:var(--brand);text-transform:uppercase;letter-spacing:.08em}
+    .domains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{position:relative;padding:22px;border-radius:18px;border:1px solid rgba(94,125,149,.16);background:linear-gradient(180deg, rgba(9,17,26,.94), rgba(4,8,13,.94));min-height:210px;overflow:hidden;box-shadow:var(--glow)}.card:after{content:"";position:absolute;right:-20px;bottom:-20px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(97,168,217,.08)}.tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:#d7e2ea;margin-bottom:14px}.tag:before{content:"";width:16px;height:2px;background:var(--red)}.card h3{margin:0 0 10px;font-size:23px;line-height:1.16}.card p{margin:0;color:var(--muted);line-height:1.68;font-size:15px}
+    .workflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.step{padding:22px;border-radius:18px;border:1px solid rgba(96,126,150,.16);background:linear-gradient(180deg, rgba(6,11,18,.92), rgba(8,16,25,.84));position:relative;overflow:hidden}.step:before{content:attr(data-num);position:absolute;right:18px;top:14px;font:700 32px/1 var(--mono);color:rgba(255,255,255,.08)}.step h3{margin:0 0 10px;font-size:20px}.step p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+    .signal{padding:32px;border-radius:24px;border:1px solid rgba(92,122,146,.18);background:radial-gradient(circle at 80% 20%, rgba(255,49,79,.10), transparent 22%),radial-gradient(circle at 18% 80%, rgba(68,176,255,.10), transparent 24%),linear-gradient(180deg, rgba(7,12,19,.96), rgba(3,8,13,.96));position:relative;overflow:hidden;box-shadow:var(--glow)}.signal:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 26%, rgba(255,90,110,.75) 0 3px, transparent 4px),radial-gradient(circle at 76% 34%, rgba(255,90,110,.95) 0 5px, transparent 6px),radial-gradient(circle at 85% 33%, rgba(255,90,110,.9) 0 4px, transparent 5px),radial-gradient(circle at 71% 40%, rgba(255,90,110,.92) 0 4px, transparent 5px),radial-gradient(circle at 81% 44%, rgba(255,90,110,.9) 0 4px, transparent 5px),radial-gradient(circle at 90% 40%, rgba(255,90,110,.8) 0 3px, transparent 4px);opacity:.9;pointer-events:none}.signal-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}.signal h2{margin:0 0 14px;font-size:40px;line-height:1.08}.signal p{margin:0 0 20px;color:var(--muted);font-size:17px;line-height:1.75}.signal .quote{font-size:34px;line-height:1.15;font-weight:800;max-width:520px}.signal .quote span{display:block}.signal .quote .red{color:#ff6677}
+    .video-shell{border:1px solid rgba(102,130,153,.18);border-radius:22px;overflow:hidden;background:linear-gradient(180deg, rgba(7,13,20,.96), rgba(2,6,10,.96));box-shadow:var(--glow)}.video-shell video{display:none;width:100%;aspect-ratio:1/1;object-fit:contain;background:#02060a}.video-shell.is-ready video{display:block}.video-shell.is-ready .video-placeholder{display:none}.video-placeholder{aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 50% 42%, #17314a 0, #0a1320 42%, #02050a 84%);text-align:center;padding:32px}.video-placeholder .play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;border:1px solid rgba(255,255,255,.22);box-shadow:0 0 18px rgba(255,49,79,.28);font-size:28px;color:#dff6ff}.video-placeholder b{font-size:20px}.video-placeholder small{font-size:12px;letter-spacing:.18em;color:#b1c1cd;text-transform:uppercase}.video-note{padding:14px 18px;color:var(--muted);font-size:13px;border-top:1px solid rgba(99,128,151,.16)}
+    .about{display:grid;grid-template-columns:1fr .95fr;gap:20px}.list{display:grid;gap:10px;margin-top:16px}.list div{padding:14px 16px;border:1px solid rgba(92,122,146,.16);border-radius:14px;background:rgba(6,12,18,.55);font-size:14px;color:#d6e3eb}.list b{display:block;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:6px}
+    .contact-section{padding:38px 0 78px}.contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:stretch}.contact-intro,.contact-panel{background:linear-gradient(155deg,rgba(8,16,25,.96),rgba(3,8,14,.96));border:1px solid rgba(116,150,173,.22);border-radius:22px;padding:clamp(22px,3vw,35px);box-shadow:var(--glow);position:relative;overflow:hidden}.contact-intro:before,.contact-panel:before{content:"";position:absolute;left:0;top:0;width:160px;height:2px;background:linear-gradient(90deg,var(--red),transparent)}.contact-intro h2{font-size:clamp(30px,3.5vw,45px);line-height:1.1;margin:0 0 18px}.contact-intro p,.contact-panel p{color:var(--muted);font-size:16px;line-height:1.7}.contact-intro p{margin:0 0 16px}.contact-points{padding:0;list-style:none;display:grid;gap:11px;margin:22px 0}.contact-points li{font-size:14px;color:#d4e1ea;padding-left:18px;position:relative;line-height:1.5}.contact-points li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 10px rgba(255,49,79,.65)}.contact-form{display:grid;gap:16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contact-form label{display:grid;gap:7px;font-weight:600;font-size:13px;letter-spacing:.02em;color:#e9f2f7}.contact-form input,.contact-form textarea,.contact-form select{width:100%;border-radius:11px;background:#07121e;border:1px solid #284153;padding:13px 14px;color:#f2f7fa;font:15px/1.4 var(--sans);outline-offset:2px}.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:2px solid #65a6d0;border-color:#5e9dbe}.contact-form textarea{resize:vertical;min-height:136px}.contact-form .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.contact-form button{cursor:pointer;justify-self:start}.form-privacy{font-size:12px!important;line-height:1.6!important;color:#93a9b7!important;margin:0}
+    footer{padding:40px 0 56px;color:#a9bccb}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(103,130,152,.14)}.tiny{text-transform:uppercase;letter-spacing:.15em;font-size:11px}
+    @media (max-width:1180px){.nav{grid-template-columns:1fr;justify-items:start}.navlinks{justify-content:flex-start}.login-shell{align-items:flex-start}.login-note{text-align:left}}
+    @media (max-width:1080px){.hero-grid,.signal-grid,.about,.contact-grid{grid-template-columns:1fr}.hero-visual{order:-1;min-height:480px}.panel-grid,.domains{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:1fr 1fr}}
+    @media (max-width:760px){.nav{padding:12px 0}.navlinks{gap:12px}.hero{padding-top:34px}.highlights,.panel-grid,.domains,.workflow,.form-row{grid-template-columns:1fr}.hero-visual{min-height:390px}.globe,.orbit{width:min(100%,380px)}.beam{height:270px;top:26px}.signal h2,.section-head h2{font-size:32px}.signal .quote{font-size:28px}.subbrand{letter-spacing:.24em}.brand-logo{width:78px}.brand-wordmark{font-size:20px}.login-form{flex-wrap:wrap}.login-form input{width:100%}.login-form button{width:100%}}
+  </style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="BROODWATCH home">
+        <img class="brand-logo" src="broodwatch-globe-header-460.png" alt="BROODWATCH globe logo">
+        <span class="brand-wordmark"><span class="brood">BROOD</span><span class="watch">WATCH</span></span>
+      </a>
+      <nav class="navlinks">
+        <a href="#platform">Platform</a>
+        <a href="#domains">Threat Domains</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#overview">Commercial</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="login-shell">
+        <div class="login-caption">User access preview</div>
+        <form class="login-form" onsubmit="return false;" aria-label="Future BROODWATCH user login preview">
+          <input type="text" name="username" placeholder="Username" autocomplete="off" aria-label="Username preview">
+          <input type="password" name="password" placeholder="Password" autocomplete="off" aria-label="Password preview">
+          <button type="submit">Login</button>
+        </form>
+        <div class="login-note">Preview only — nonfunctional login fields for future use.</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Executive Intelligence Platform</div>
+        <h1 class="hero-wordmark"><span class="brood">BROOD</span><span class="watch">WATCH</span></h1>
+        <div class="subbrand">Emerging Financial Threat Intelligence</div>
+        <p class="lede">Financial threats leave signals. <span class="red">Bring them into focus before others see them.</span></p>
+        <p class="summary"><span class="bw-inline"><span class="brood">BROOD</span><span class="watch">WATCH</span></span> is an independently developed, adversary-centric executive intelligence platform designed to identify emerging financial-crime and national-security threats by following the signals criminals create, connecting the evidence they leave behind, and translating early indicators into actionable insight.</p>
+        <div class="actions">
+          <a class="btn primary" href="#overview">Watch the commercial</a>
+          <a class="btn secondary" href="#domains">Explore the platform</a>
+          <a class="btn secondary" href="#contact">Contact BROODWATCH</a>
+        </div>
+        <div class="highlights">
+          <div class="chip"><b>Threat Radar</b><span>Prioritize emerging threats across sanctions evasion, cryptocurrency misuse, fraud, and transnational illicit finance.</span></div>
+          <div class="chip"><b>Evidence Network</b><span>Connect sources, signals, entities, domains, wallets, companies, and behaviors into one intelligible picture.</span></div>
+          <div class="chip"><b>Executive Briefing</b><span>Turn complex research into concise, decision-ready intelligence for senior leaders.</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="beam"></div><div class="globe"></div><div class="orbit"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="node blue n1"></div><div class="node n2"></div><div class="node n3"></div><div class="node n4"></div><div class="node blue n5"></div><div class="node n6"></div><div class="node blue n7"></div><div class="node n8"></div><div class="scanline"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="platform"><div class="wrap"><div class="panel-grid">
+    <div class="panel"><h3>Prioritize emerging threats.</h3><p>Surface weak signals and emerging typologies before they become mainstream reporting topics. BROODWATCH is built to support rapid triage, escalation decisions, and executive awareness.</p></div>
+    <div class="panel"><h3>Connect the evidence.</h3><p>Move from isolated indicators to a broader threat picture by linking sources, entities, geographies, digital infrastructure, and financial-system exposure into a coherent intelligence view.</p></div>
+    <div class="panel"><h3>Turn research into decisions.</h3><p>Deliver concise, source-aware output for senior leaders. <span class="accent">Follow the signals. Connect the evidence. Act earlier.</span></p></div>
+  </div></div></section>
+
+  <section class="section" id="domains"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Six connected threat domains</div><h2>Track criminal innovation from the adversary's perspective.</h2></div><p>The platform is designed to observe how threat actors adapt, where new methods intersect with the financial system, and which developments warrant earlier executive attention.</p></div><div class="domains">
+    <article class="card"><div class="tag">Threat Domain</div><h3>AI-enabled fraud and deception</h3><p>Monitor the rapid adoption of generative tools, synthetic identities, impersonation methods, and automation that increase scale, precision, and speed across fraud campaigns.</p></article>
+    <article class="card"><div class="tag">Threat Domain</div><h3>Cryptocurrency and illicit value transfer</h3><p>Identify the infrastructure, wallet behavior, off-ramp patterns, and institutional exposure associated with scams, money laundering, and fast-moving cross-border movement of value.</p></article>
+    <article class="card"><div class="tag">Threat Domain</div><h3>Sanctions evasion and hawala networks</h3><p>Follow informal transfer systems, front companies, black-market exchange activity, and overseas facilitators that create hidden channels around the formal financial system.</p></article>
+    <article class="card"><div class="tag">Threat Domain</div><h3>Ransomware and cyber-enabled extortion</h3><p>Track early indicators around ransomware ecosystems, affiliate behavior, payment pathways, and monetization models that may affect financial institutions and critical sectors.</p></article>
+    <article class="card"><div class="tag">Threat Domain</div><h3>PRC precursor and transnational criminal networks</h3><p>Observe intersections among precursor sourcing, logistics, shell structures, laundering mechanisms, and foreign nexus that shape strategic criminal risk.</p></article>
+    <article class="card"><div class="tag">Threat Domain</div><h3>Dark-web and frontier threat signals</h3><p>Capture overseas and domestic reporting, criminal communications, and emerging methods before they mature into broader criminal trends or public enforcement priorities.</p></article>
+  </div></div></section>
+
+  <section class="section" id="workflow"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Analytical workflow</div><h2>From signals to insight.</h2></div><p>BROODWATCH combines collection, structured analysis, adversarial review, and executive reporting into one cycle designed to produce earlier warning and clearer decisions.</p></div><div class="workflow">
+    <div class="step" data-num="01"><h3>Collect</h3><p>Gather open-source, overseas, domestic, and specialist reporting relevant to emerging criminal techniques, digital infrastructure, and illicit-finance behavior.</p></div>
+    <div class="step" data-num="02"><h3>Resolve and connect</h3><p>Link names, domains, wallets, companies, platforms, places, and events to identify hidden relationships and broader patterns.</p></div>
+    <div class="step" data-num="03"><h3>Challenge and assess</h3><p>Pressure-test findings through red-team review, compare competing explanations, and assess novelty, foreign nexus, exposure, and velocity.</p></div>
+    <div class="step" data-num="04"><h3>Brief decision-makers</h3><p>Translate complexity into concise, readable intelligence output tailored to senior bank, fintech, compliance, or national-security leadership.</p></div>
+  </div></div></section>
+
+  <section class="section"><div class="wrap"><div class="signal"><div class="signal-grid"><div><div class="eyebrow">Operational value</div><h2>Uncover new criminal methods before they become headlines.</h2><p>BROODWATCH connects dark-web reporting, sanctions and hawala insights, cryptocurrency intelligence, AI-enabled fraud indicators, and transnational threat signals into an executive view designed for earlier recognition of material risk.</p></div><div class="quote"><span>Follow the signals.</span><span>Connect the evidence.</span><span class="red">Act earlier.</span></div></div></div></div></section>
+
+  <section class="section" id="overview"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Platform overview</div><h2>See <span class="broodwatch-wordmark wordmark-heading"><span class="brood">BROOD</span><span class="watch">WATCH</span></span> in motion.</h2></div><p>A short executive commercial introducing the BROODWATCH concept, its intelligence purpose, and the broader vision for earlier detection of emerging financial threats.</p></div><div class="video-shell"><div class="video-placeholder" aria-label="BROODWATCH commercial placeholder"><div class="play">▶</div><b class="broodwatch-wordmark"><span class="brood">BROOD</span><span class="watch">WATCH</span></b><small>42-second executive overview</small></div><video controls preload="metadata" playsinline poster="broodwatch-video-poster.svg" aria-label="BROODWATCH 42-second commercial"><source src="Broodwatch_LinkedIn_Commercial_42s_v22.mp4" type="video/mp4">Your browser does not support embedded video.</video><div class="video-note">42-second platform overview · Independently developed intelligence technology.</div></div></div></section>
+
+  <section class="section" id="about"><div class="wrap about"><div class="panel"><div class="eyebrow">Independent development</div><h2 class="wordmark-heading" style="margin:0 0 12px;font-size:34px;line-height:1.12">Built outside formal duty to explore what next-generation threat intelligence can become.</h2><p style="margin:0;color:var(--muted);line-height:1.8;font-size:16px"><span class="bw-inline"><span class="brood">BROOD</span><span class="watch">WATCH</span></span> is an independent project developed by Todd Porinsky. It combines federal investigative experience, financial-crime expertise, and practical experimentation with AI-enabled analytical workflows to explore how earlier-warning intelligence can better serve financial institutions and national-security professionals.</p><div class="list"><div><b>Purpose</b>Anticipate emerging criminal methods and technologies before they are widely recognized.</div><div><b>Orientation</b>Adversary-centric, financially relevant, source-aware, and designed for executive decision-making.</div><div><b>Public site</b>This website presents the concept only and does not expose investigative data, backend systems, or sensitive source material.</div></div></div><div class="panel"><div class="eyebrow">Designed for</div><h2 style="margin:0 0 12px;font-size:36px;line-height:1.1">Senior leaders who need clarity on emerging risk.</h2><p style="margin:0;color:var(--muted);line-height:1.8;font-size:16px">The BROODWATCH concept is relevant to banks, fintech firms, compliance teams, corporate investigations, strategic-intelligence functions, and national-security stakeholders who want earlier visibility into novel threats.</p><div class="list"><div><b>Use cases</b>Financial-crime risk, strategic investigations, sanctions and AML analysis, threat intelligence, executive reporting.</div><div><b>Output style</b>Concise threat framing, evidence connection, escalation logic, and executive-ready briefings.</div><div><b>Focus</b>From signals to insight—without waiting for yesterday's criminal trend to become tomorrow's institutional vulnerability.</div></div></div></div></section>
+
+  <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Professional inquiries</div><h2 id="contact-heading">Contact <span class="broodwatch-wordmark wordmark-heading"><span class="brood">BROOD</span><span class="watch">WATCH</span></span>.</h2></div><p>For strategic intelligence discussions, financial-crime innovation, technology collaboration, and professional opportunities.</p></div><div class="contact-grid"><div class="contact-intro"><div class="eyebrow">Independent intelligence innovation</div><h2>Start a conversation about emerging threats.</h2><p><span class="bw-inline"><span class="brood">BROOD</span><span class="watch">WATCH</span></span> is an independently developed initiative exploring how adversary-centric analysis and AI-enabled workflows can provide earlier warning for senior decision-makers.</p><ul class="contact-points"><li>Executive and strategic-intelligence discussions</li><li>Banking, fintech, AML, and investigative applications</li><li>Technology collaboration and professional opportunities</li></ul><p class="form-privacy">For general professional inquiries only. Please do not submit classified, confidential, protected investigative, or personal financial information.</p></div><div class="contact-panel"><form id="broodwatch-contact-form" class="contact-form" action="https://formspree.io/f/meagknyn" method="POST" accept-charset="UTF-8" aria-label="Contact BROODWATCH"><h3>Send a professional inquiry.</h3><div class="form-row"><label>Full name <input name="name" type="text" autocomplete="name" maxlength="120" required placeholder="Your name"></label><label>Organization <input name="organization" type="text" autocomplete="organization" maxlength="150" placeholder="Company or organization"></label></div><label>Email address <input name="email" type="email" autocomplete="email" maxlength="200" required placeholder="you@example.com"></label><label>Inquiry type<select name="inquiry_type" required><option value="" selected disabled>Select a topic</option><option>Strategic partnership</option><option>Financial-crime / intelligence discussion</option><option>Technology collaboration</option><option>Professional opportunity</option><option>Other inquiry</option></select></label><label>Message <textarea name="message" required minlength="10" maxlength="4000" placeholder="Briefly describe your inquiry"></textarea></label><label class="honeypot" aria-hidden="true">Leave this field empty <input name="_gotcha" type="text" autocomplete="off" tabindex="-1"></label><p class="form-privacy">For professional inquiries only. Do not include confidential, classified, sensitive investigative, or personal financial information. Your submission will be processed by the third-party form provider.</p><button class="btn primary" type="submit">Send inquiry ↗</button></form></div></div></div></section>
+
+  <footer><div class="wrap foot"><div><div class="brand" style="margin-bottom:10px"><img class="brand-logo" src="broodwatch-globe-header-460.png" alt="BROODWATCH globe logo" style="width:70px"><span class="brand-wordmark"><span class="brood">BROOD</span><span class="watch">WATCH</span></span></div><div class="tiny">Emerging financial threat intelligence · <span id="year">2026</span></div></div><div class="tiny"><a href="#top">Back to top</a></div></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const commercial = document.querySelector('.video-shell video');
+    if (commercial) {
+      const ready = () => commercial.parentElement.classList.add('is-ready');
+      commercial.addEventListener('loadedmetadata', ready);
+      commercial.addEventListener('canplay', ready);
+      if (commercial.readyState >= 1) ready();
+    }
+  </script>
+</body>
+</html>
