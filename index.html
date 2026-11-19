@@ -186,6 +186,36 @@
     footer{padding:40px 0 56px;color:#a9bccb}
     .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(103,130,152,.14)}
     .tiny{text-transform:uppercase;letter-spacing:.15em;font-size:11px}
+
+    /* Public contact channel: only show the form once a real Formspree endpoint is configured. */
+    .contact-section{padding:38px 0 78px}
+    .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:stretch}
+    .contact-intro,.contact-panel{background:linear-gradient(155deg,rgba(8,16,25,.96),rgba(3,8,14,.96));border:1px solid rgba(116,150,173,.22);border-radius:22px;padding:clamp(22px,3vw,35px);box-shadow:var(--glow);position:relative;overflow:hidden}
+    .contact-intro:before,.contact-panel:before{content:"";position:absolute;left:0;top:0;width:160px;height:2px;background:linear-gradient(90deg,var(--red),transparent)}
+    .contact-intro h2{font-size:clamp(30px,3.5vw,45px);line-height:1.1;margin:0 0 18px}
+    .contact-intro p,.contact-panel p{color:var(--muted);font-size:16px;line-height:1.7}
+    .contact-intro p{margin:0 0 16px}
+    .contact-points{padding:0;list-style:none;display:grid;gap:11px;margin:22px 0}
+    .contact-points li{font-size:14px;color:#d4e1ea;padding-left:18px;position:relative;line-height:1.5}
+    .contact-points li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 10px rgba(255,49,79,.65)}
+    .contact-panel h3{font-size:24px;margin:0 0 12px}
+    .contact-offline{display:grid;align-content:center;min-height:290px}
+    .contact-offline .status{display:flex;align-items:center;gap:9px;font:600 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#8ec8e8;margin-bottom:18px}
+    .contact-offline .status:before{content:"";width:8px;height:8px;border-radius:50%;background:#6fd2e5;box-shadow:0 0 12px rgba(111,210,229,.5)}
+    .contact-offline .btn{justify-self:start;margin-top:15px}
+    .contact-form{display:grid;gap:16px}
+    .contact-form[hidden],.contact-offline[hidden]{display:none!important}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .contact-form label{display:grid;gap:7px;font-weight:600;font-size:13px;letter-spacing:.02em;color:#e9f2f7}
+    .contact-form input,.contact-form textarea,.contact-form select{width:100%;border-radius:11px;background:#07121e;border:1px solid #284153;padding:13px 14px;color:#f2f7fa;font:15px/1.4 var(--sans);outline-offset:2px}
+    .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:2px solid #65a6d0;border-color:#5e9dbe}
+    .contact-form textarea{resize:vertical;min-height:136px}
+    .contact-form .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .contact-form button{cursor:pointer;justify-self:start}
+    .form-privacy{font-size:12px!important;line-height:1.6!important;color:#93a9b7!important;margin:0}
+    @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr}.contact-panel,.contact-intro{padding:22px}}
+
     @media (max-width:1080px){
       .hero-grid,.signal-grid,.about{grid-template-columns:1fr}
       .hero-visual{order:-1;min-height:480px}
@@ -216,6 +246,7 @@
         <a href="#workflow">Workflow</a>
         <a href="#overview">Commercial</a>
         <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -231,6 +262,7 @@
         <div class="actions">
           <a class="btn primary" href="#overview">Watch the commercial</a>
           <a class="btn secondary" href="#domains">Explore the platform</a>
+          <a class="btn secondary" href="#contact">Contact BROODWATCH</a>
         </div>
         <div class="highlights">
           <div class="chip"><b>Threat Radar</b><span>Prioritize emerging threats across sanctions evasion, cryptocurrency misuse, fraud, and transnational illicit finance.</span></div>
@@ -416,6 +448,56 @@
     </div>
   </section>
 
+  <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Professional inquiries</div><h2 id="contact-heading">Contact BROODWATCH.</h2></div>
+        <p>For strategic intelligence discussions, financial-crime innovation, technology collaboration, and professional opportunities.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <div class="eyebrow">Independent intelligence innovation</div>
+          <h2>Start a conversation about emerging threats.</h2>
+          <p>BROODWATCH is an independently developed initiative exploring how adversary-centric analysis and AI-enabled workflows can provide earlier warning for senior decision-makers.</p>
+          <ul class="contact-points">
+            <li>Executive and strategic-intelligence discussions</li>
+            <li>Banking, fintech, AML, and investigative applications</li>
+            <li>Technology collaboration and professional opportunities</li>
+          </ul>
+          <p class="form-privacy">For general professional inquiries only. Please do not submit classified, confidential, protected investigative, or personal financial information.</p>
+        </div>
+        <div class="contact-panel">
+          <div class="contact-offline" id="contact-offline">
+            <div class="status">Professional contact channel</div>
+            <h3>Connect privately.</h3>
+            <p>Reach out directly on LinkedIn to discuss BROODWATCH, emerging financial threats, intelligence applications, or collaboration. A secure website inquiry form is being configured.</p>
+            <a class="btn primary" href="https://www.linkedin.com/in/todd-porinsky-6a8307349" target="_blank" rel="noopener noreferrer" aria-label="Contact BROODWATCH's developer on LinkedIn">Message on LinkedIn ↗</a>
+            <p class="form-privacy" style="margin-top:16px">No personal email address is published on this website.</p>
+          </div>
+          <form id="broodwatch-contact-form" class="contact-form" method="POST" accept-charset="UTF-8" hidden aria-label="Contact BROODWATCH">
+            <h3>Send a professional inquiry.</h3>
+            <div class="form-row">
+              <label>Full name <input name="name" type="text" autocomplete="name" maxlength="120" required placeholder="Your name"></label>
+              <label>Organization <input name="organization" type="text" autocomplete="organization" maxlength="150" placeholder="Company or organization"></label>
+            </div>
+            <label>Email address <input name="email" type="email" autocomplete="email" maxlength="200" required placeholder="you@example.com"></label>
+            <label>Inquiry type
+              <select name="inquiry_type" required>
+                <option value="" selected disabled>Select a topic</option>
+                <option>Strategic partnership</option><option>Financial-crime / intelligence discussion</option>
+                <option>Technology collaboration</option><option>Professional opportunity</option><option>Other inquiry</option>
+              </select>
+            </label>
+            <label>Message <textarea name="message" required minlength="10" maxlength="4000" placeholder="Briefly describe your inquiry"></textarea></label>
+            <label class="honeypot" aria-hidden="true">Leave this field empty <input name="_gotcha" type="text" autocomplete="off" tabindex="-1"></label>
+            <p class="form-privacy">For professional inquiries only. Do not include confidential, classified, sensitive investigative, or personal financial information. Your submission will be processed by the third-party form provider.</p>
+            <button class="btn primary" type="submit">Send inquiry ↗</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="wrap foot">
       <div>
@@ -434,6 +516,17 @@
       commercial.addEventListener('canplay', ready);
       if (commercial.readyState >= 1) ready();
     }
+    /* To activate: insert only the Formspree endpoint URL (never a private email).
+       Example: https://formspree.io/f/your-form-id */
+    const broodwatchFormspreeEndpoint = "";
+    const contactForm = document.getElementById("broodwatch-contact-form");
+    const contactOffline = document.getElementById("contact-offline");
+    if (/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(broodwatchFormspreeEndpoint)) {
+      contactForm.action = broodwatchFormspreeEndpoint;
+      contactForm.hidden = false;
+      contactOffline.hidden = true;
+    }
+
   </script>
 </body>
 </html>
